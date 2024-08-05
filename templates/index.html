@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>ASCII Art Generator</title>
+    <link rel="stylesheet" href="static/styles.css"/>
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="header-container">
+            <a href="/">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            </a>
+            <div class="nav-buttons">
+                <a href="/about.html"><button class="nav-button">How to Use</button></a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- ASCII Input Form -->
+        <form id="asciiForm" action="/ascii-art" method="post">
+            <label for="message"><b>Enter Input Text Here:</b></label>
+            <textarea id="message" name="message" rows="5" placeholder="Type Something..."></textarea>
+            
+            <label for="banner-options"> <b>Select Banner Type:</b></label>
+            <select id="banner-options" name="banner-options">
+                <option value="standard">Standard</option>
+                <option value="thinkertoy">Thinkertoy</option>
+                <option value="shadow">Shadow</option>
+            </select>
+            
+            <div class="button-container">
+                <button type="submit" class="generate-button">Generate ASCII Art</button>
+                <a href="http://localhost:8080/" class="reset-button">Reset</a>
+            </div>
+        </form>
+
+        <!-- ASCII Output Display -->
+        {{if .Result}}
+        <h2>ASCII Art Output:</h2>
+        <div class="ascii-box">
+            <pre>{{.Result}}</pre>
+        </div>
+        {{end}}
+    </main>
+</body>
+</html>
