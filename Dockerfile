@@ -1,6 +1,11 @@
 # Build stage
 FROM golang:1.22-alpine
 
+# Metadata
+LABEL maintainer="swapomuse@gmail.com"
+LABEL version="1.0"
+LABEL description="A Go web server for ASCII Art"
+
 WORKDIR /app
 
 # Copy go.mod and go.sum files
